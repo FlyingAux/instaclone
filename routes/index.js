@@ -174,7 +174,7 @@ router.post(
       user.posts.push(post._id);
     } else if (req.body.category === "story") {
       let story = await storyModel.create({
-        story: req.file.filename,
+        story: req.body.filename,
         user: user._id,
       });
       user.stories.push(story._id);
